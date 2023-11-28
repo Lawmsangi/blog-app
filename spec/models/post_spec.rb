@@ -32,4 +32,10 @@ RSpec.describe Post, type: :model do
   it 'should have a recent_comments method' do
     expect(post).to respond_to(:recent_comments)
   end
+
+  it 'calls update_user_posts_count after saving' do
+    post.save
+    user.reload
+    expect(user.posts_counter).to eq(1)
+  end
 end

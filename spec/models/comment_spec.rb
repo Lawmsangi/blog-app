@@ -11,4 +11,9 @@ RSpec.describe Comment, type: :model do
   it 'is valid with valid attributes' do
     expect(comment).to be_valid
   end
+
+  it 'update comments_counter after saving' do
+    post.reload
+    expect(post.comments_counter).to eq(1)
+  end
 end

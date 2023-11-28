@@ -10,4 +10,9 @@ RSpec.describe Like, type: :model do
   it 'is valid with valid attributes' do
     expect(like).to be_valid
   end
+
+  it 'update likes_counter after saving' do
+    post.reload
+    expect(post.likes_counter).to eq(1)
+  end
 end
