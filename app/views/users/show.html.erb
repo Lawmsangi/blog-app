@@ -1,1 +1,32 @@
-<h1>User</h1>
+<div class="users-container">
+    <div class="users-image">
+        <img src="<%= @user.photo %>" alt="<%= @user.name %>">
+    </div>
+    <div class="users-info">
+        <h2><%= @user.name %></h2>
+        <p>Number of posts:<%= @user.posts_counter %></p>
+    </div>
+</div>
+
+<div class="users-bio">
+    <h3>Bio</h3>
+    <p><%= @user.bio %></p>
+</div>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li class="users-posts">
+        <h3><%= link_to post.title, user_post_path(@user,post) %></h3>
+        <p><%= post.text %></p>   
+
+        <div class="comment-likes">
+            <p>Comments:<%= post.comments_counter %></p>
+            <p>Likes:<%= post.likes_counter %></p>
+        </div>
+    </li>
+  <% end %>
+
+    <%= link_to user_posts_path(@user),class:'button' do %>
+        <button> See all posts </button>
+    <% end %>
+</ul>

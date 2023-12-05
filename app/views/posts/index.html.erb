@@ -1,1 +1,35 @@
-<h1>Posts go here</h1>
+<div class="users-container">
+    <div class="users-image">
+        <img src="<%= @user.photo %>" alt="<%= @user.name %>">
+    </div>
+    <div class="users-info">
+        <h2><%= @user.name %></h2>
+        <p>Number of posts:<%= @user.posts_counter %></p>
+    </div>
+</div>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li class="users-posts">
+        <h3><%= link_to post.title, user_post_path(@user,post) %></h3>
+        <p><%= post.text %></p>   
+
+        <div class="comment-likes">
+            <p>Comments:<%= post.comments_counter %></p>
+            <p>Likes:<%= post.likes_counter %></p>
+        </div>
+    </li>
+  
+    <ul class="user-comments">
+        <% post.recent_comments.each do |comment| %>
+            <li>
+                <p><%= comment.user.name %>: <%= comment.text %> </p>
+            </li>
+        <% end %>
+    </ul>
+     
+  <% end %>
+    <div class="button">
+      <button> Pagination </button>
+    </div>
+</ul>
