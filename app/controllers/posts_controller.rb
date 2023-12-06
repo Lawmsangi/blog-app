@@ -8,6 +8,16 @@ class PostsController < ApplicationController
 
   def show; end
 
+  def create
+    @user = User.find(params[:user_id])
+    @post = current_user.posts.build(params.require(:post).permit(:title, :text))
+    if @post.save
+      redirect_to user_posts_path(@user)
+    else
+      render :new
+    end
+  end
+
   private
 
   def set_post
