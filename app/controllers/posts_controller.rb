@@ -18,6 +18,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def new
+    @post = Post.new
+  end
+
   private
 
   def set_post
