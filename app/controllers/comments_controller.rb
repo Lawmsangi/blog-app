@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @post = Comment.new
+    @comment = Comment.new
   end
 
   private
