@@ -8,7 +8,18 @@
         </div>
       </div>
       <p><%= @post.text %></p>
+
+      <div class="comment-likes">
+        <%= link_to new_user_post_comment_path(@user,@post) do %>
+          Add Comment
+        <% end %>
+        <%= form_with model: @like, url: user_post_likes_path(user_id: @post.author.id, post_id: @post.id), method: :post, remote: true do |form| %>
+          <%= form.submit 'Like' %>
+        <% end %>
+      </div>
   </div>
+
+   
 
     <ul class="user-comments">
         <% @post.comments.each do |comment| %>
