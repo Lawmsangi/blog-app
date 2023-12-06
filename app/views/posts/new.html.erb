@@ -1,0 +1,11 @@
+<%= form_with model: @user.posts.build, url: user_posts_path(@user), method: :post do |form| %>
+    <div class="field">
+        <%= form.label :title, 'Title' %>
+        <%= form.text_field :title %>
+
+        <%= form.label :text, 'Text' %>
+        <%= form.text_area :text %>
+
+        <%= form.submit 'Create Post', class: 'button' %>
+    </div>
+<% end %>
