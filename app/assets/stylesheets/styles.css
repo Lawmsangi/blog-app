@@ -6,6 +6,10 @@
   list-style: none;
 }
 
+.no-text-decoration {
+  text-decoration: none;
+}
+
 .users-container {
   display: flex;
   gap: 10px;
