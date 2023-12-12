@@ -6,11 +6,11 @@ RSpec.feature 'User Post Index Page', type: :feature do
     @posts = create_list(:post, 6, author: @user)
     @post = create(:post, author: @user, title: 'Post 1', text: 'Post 1 text', comments_counter: 2, likes_counter: 3)
     visit user_posts_path(@user)
-    end
+  end
   scenario "displays user's profile information" do
     expect(page).to have_selector('.users-image img', count: 1)
     expect(page).to have_content(@user.name)
-    expect(page).to have_content("Number of posts:#{@posts.size+1}")
+    expect(page).to have_content("Number of posts:#{@posts.size + 1}")
     @posts.each do |post|
       expect(page).to have_link(post.title, href: user_post_path(@user, post))
       expect(page).to have_content(post.text)

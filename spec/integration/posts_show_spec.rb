@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Post Show Page', type: :feature do
-  let(:user) { create(:user) } 
-  let(:post) { create(:post, author: user, title: 'Title', text: 'Text') } 
+  let(:user) { create(:user) }
+  let(:post) { create(:post, author: user, title: 'Title', text: 'Text') }
   it 'displays post details' do
     visit user_post_path(user, post)
     expect(page).to have_content(post.title)
