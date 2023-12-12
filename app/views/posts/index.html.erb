@@ -11,7 +11,7 @@
 <ul>
   <% @posts.each do |post| %>
     <li class="users-posts">
-        <h3><%= link_to post.title, user_post_path(@user,post) %></h3>
+        <h3><%= link_to post.title, user_post_path(@user,post), class: 'no-text-decoration' %></h3>
         <p><%= post.text %></p>   
 
         <div class="comment-likes">
@@ -32,7 +32,7 @@
     <div class="button">
       <button> Pagination </button>
       <%= link_to new_user_post_path(@user), class:'button' do %> 
-        <button> Create Post </button>
+        <button> Create New Post </button>
       <% end %>
     </div>
 </ul>

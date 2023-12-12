@@ -132,6 +132,11 @@ To run the project, execute the following command:
 - Twitter: [@twitterhandle](https://twitter.com/mamy_22_zayn)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/lawmsangi-varte-baa429244/)
 
+👤 **Aung Pyae Khant**
+
+- GitHub: [@lilskyex0x](https://github.com/lilskyex0x)
+- LinkedIn: [Aung Pyae Khant](https://www.linkedin.com/in/aung-pyae-khant-932342251)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
