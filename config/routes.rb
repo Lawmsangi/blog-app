@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'comments/new'
   get 'comments/create'
   resources :users do
@@ -7,5 +8,5 @@ Rails.application.routes.draw do
       resources :likes
     end
   end
-  root 'users#index'
+  root to: 'users#index'
 end
