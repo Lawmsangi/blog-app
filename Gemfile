@@ -6,6 +6,8 @@ gem 'factory_bot_rails'
 
 gem 'rails-controller-testing'
 
+gem 'letter_opener'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.2'
 
@@ -71,3 +73,5 @@ group :test do
 end
 
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+gem 'devise', '~> 4.9'
