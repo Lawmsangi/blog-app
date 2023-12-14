@@ -69,3 +69,31 @@
   flex-direction: column;
   gap: 10px;
 }
+
+.like-button,
+.comment-submit {
+  padding: 5px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button {
+  margin: 10px;
+  padding: 10px;
+  background-color: #d1220f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.like-button:hover {
+  background-color: #2980b9;
+}
+
+.delete-button:hover {
+  background-color: #b71c1c;
+}

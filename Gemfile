@@ -8,6 +8,8 @@ gem 'rails-controller-testing'
 
 gem 'letter_opener'
 
+gem 'cancancan'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.2'
 
