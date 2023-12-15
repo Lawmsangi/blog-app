@@ -11,7 +11,7 @@ class Api::V1::CommentsController < ApplicationController
   def create
     user_id = params[:user_id]
     post_id = params[:post_id]
-    @comment = Comment.new(user_id: user_id, post_id: post_id, text: comment_params[:text])
+    @comment = Comment.new(user_id:, post_id:, text: comment_params[:text])
 
     if @comment.save
       render json: { message: 'Comment saved successfully!' }
