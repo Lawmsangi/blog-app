@@ -1,44 +1,39 @@
-<h2>Sign up</h2>
+<%= render "devise/shared/error_messages", resource: resource %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "forms" }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<div class="session-container">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "forms" }) do |f| %>
+  
+    <div class="field">
+      <h1>Sign up</h1>
+      <%= f.label :name %>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Name" %>
+      <%= f.label :bio %>
+      <%= f.text_field :bio, autofocus: true, autocomplete: "bio", placeholder: "Bio" %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Name" %>
-  </div>
+      <%= f.label :photo %>
+      <%= f.text_field :photo, autofocus: true, autocomplete: "photo", placeholder: "Photo Url"  %>
 
-  <div class="field">
-    <%= f.label :bio %><br />
-    <%= f.text_field :bio, autofocus: true, autocomplete: "bio", placeholder: "Bio" %>
-  </div>
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
 
-  <div class="field">
-    <%= f.label :photo %><br />
-    <%= f.text_field :photo, autofocus: true, autocomplete: "photo", placeholder: "Photo Url"  %>
-  </div>
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %>
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password" %>
+    
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
-  </div>
+    <div class="field">
+      <%= f.submit "Sign up" , class: "login-btn" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password" %>
-  </div>
+    <%- if controller_name != 'sessions' %>
+      <span class="login-page">Already have an account?
+        <%= link_to "Log in", new_session_path(resource_name) %>
+        <% end %>
+      </span>
+      
+  <% end %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password Confirmation" %>
-  </div>
-
-  <div class="buttons">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
